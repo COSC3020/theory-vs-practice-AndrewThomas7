@@ -58,6 +58,7 @@ Therefore we can see that the average time complexity is misleading for consider
 
 
 
+
 ## Question 2
 **Suppose finding a particular element in a binary search tree with 1,000 
   elements takes 5 seconds. Given what you know about the asymptotic complexity*
@@ -66,9 +67,17 @@ Therefore we can see that the average time complexity is misleading for consider
 
 Search for Binary tree: $Log(n)$
 
-For this operation to take 5 seconds we must have $T(n)=Log(100n)$
+For this operation to take 5 seconds we must have $T(n)=nLog(1000)=5$. Solving for this we have:
 
-Then we have for that 10,000 inputs takes $T(n)=Log(100(10000))=6$ seconds
+$n=\frac{5}{log_2(1000)}=0.5017166$
+
+Checking this we have:
+
+ $0.5017166log_2(1000)=5$
+
+Then we have for that 10,000 inputs takes
+
+ $T(n)=0.5017166log_2(10000)=\frac{20}{3}=6.666$ seconds
 
 
 ## Question 3
