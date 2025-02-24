@@ -14,12 +14,6 @@
 
 Add your answers to this markdown file.
 
-“I certify that I have listed all sources used to complete this exercise, including the use
-of any Large Language Models. All of the work is my own, except where stated
-otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is
-suspected, charges may be filed against me without prior notice.”-Andrew Thomas
-
-
 ### Question 1
 *List 3 reasons why asymptotic analysis may be misleading with respect to actual performance in practice.*
 
@@ -38,7 +32,7 @@ suspected, charges may be filed against me without prior notice.”-Andrew Thoma
 
 -Reason 2: Time complexity is somewhat general
 
-Time-complexity is essentially a mathematical set contained by some given criteria. Which is to say maybe we only want functions less than or equal to(Big O), greater than or equal to(Big-$\Omega$). The time complexity only tells us that any given function $T(n)$ for some algorithm fits a criteria of a set, and because a lot of algorithms can fit into that set it doesn't tell us much about how practical it is, or how it works.
+Time-complexity is essentially a mathematical set contained by some given criteria. Which is to say maybe we only want functions less than or equal to(Big O), greater than or equal to(Big- $\Omega$ ). The time complexity only tells us that any given function $T(n)$ for some algorithm fits a criteria of a set, and because a lot of algorithms can fit into that set it doesn't tell us much about how practical it is, or how it works.
 
 For example:
 
@@ -50,12 +44,11 @@ Reason 3: A good time complexity doesn't imply a good outcome for every siutatio
 
 Lastly to build upon our second reason, asymptotic complexity can be misleading when applied to certain situations such as sorting short lists.
 
-In this last example I want to pull upon the asymptotic complexity of insertion sort($O(n^2)$) and quick-sort($O(nlog(n))$). Generally Quick-Sort is considered one of the fastest, if not the fastest sorting algorithms. However this fastestness only applies to large lists and if you were working on smaller lists you would want to actually want to use insertion sort because its actually more effiective. This is mostly because insertion sort is more memory efficient and doesn't require any complex procedures. Whereas quicksort is a little more complex and while implace does take up more memory due to recursion. When comparing small or sorted lists like this we have that quicksort has $O(n^2)$ and insertion sort has $O(n)$.
+In this last example I want to pull upon the asymptotic complexity of insertion sort( $O(n^2)$ ) and quick-sort( $O(nlog(n))$ ). Generally Quick-Sort is considered one of the fastest, if not the fastest sorting algorithms. However this fastestness only applies to large lists and if you were working on smaller lists you would want to actually want to use insertion sort because its actually more effiective. This is mostly because insertion sort is more memory efficient and doesn't require any complex procedures. Whereas quicksort is a little more complex and while implace does take up more memory due to recursion. When comparing small or sorted lists like this we have that quicksort has $O(n^2)$ and insertion sort has $O(n)$.
 
 Now we if we were just to look at the general asymptotic complexity as in the begginning of the statement we wouldn't have accounted for this at all. Thus you must look at not only time complexity but also how it changes based on the task you are using it for.
 
 Therefore we can see that the average time complexity is misleading for considering certain tasks and is depednent upon what kind of tasks you need your algorthm to perform.
-
 
 
 
@@ -86,10 +79,12 @@ Then we have for that 10,000 inputs takes
   reasons why this could be the case, given that reasoning with the asymptotic
   complexity suggests a different time.*
 
+$T(n)=\frac{n}{100}$
 
-  Reason 1: Our tree is actually a linked list
 
-  If our tree is just a bunch of nodes that either increase or decrease exclusivly then we end up with a tree a resembling a linked list and our time complexity for search will be $O(n)$ slowing the search process signifiantly.
+  Reason 1: Differences in software behavior
+
+ If we initally run our computer with no tabs open and nothing else on the computer running. Other than what is necessary of course, then lets say our computer took 5 seconds as it did above. However the next time we run it we have two different browsers open with several tabs and a video running in the backgroud then our program could end up potentially taking 100 seconds. This is because the computers resources such as the ram are taken up and only a small amount can be allowcated to the task of the search.
 
   Reason 2: Different Hardware
 
