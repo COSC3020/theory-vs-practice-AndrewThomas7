@@ -14,6 +14,15 @@
 
 Add your answers to this markdown file.
 
+All exercises must contain the following statement:
+“I certify that I have listed all sources used to complete this exercise, including the use
+of any Large Language Models. All of the work is my own, except where stated
+otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is
+suspected, charges may be filed against me without prior notice.”-Andrew Thomas
+
+
+
+
 ### Question 1
 *List 3 reasons why asymptotic analysis may be misleading with respect to actual performance in practice.*
 
@@ -32,7 +41,7 @@ Add your answers to this markdown file.
 
 -Reason 2: Time complexity is somewhat general
 
-Time-complexity is essentially a mathematical set contained by some given criteria. Which is to say maybe we only want functions less than or equal to(Big O), greater than or equal to(Big- $\Omega$ ). The time complexity only tells us that any given function $T(n)$ for some algorithm fits a criteria of a set, and because a lot of algorithms can fit into that set it doesn't tell us much about how practical it is, or how it works.
+Time-complexity is essentially a mathematical set contained by some given criteria. Which is to say maybe we only want functions less than or equal to(Big O), greater than or equal to(Big-$\Omega$). The time complexity only tells us that any given function $T(n)$ for some algorithm fits a criteria of a set, and because a lot of algorithms can fit into that set it doesn't tell us much about how practical it is, or how it works.
 
 For example:
 
@@ -44,7 +53,7 @@ Reason 3: A good time complexity doesn't imply a good outcome for every siutatio
 
 Lastly to build upon our second reason, asymptotic complexity can be misleading when applied to certain situations such as sorting short lists.
 
-In this last example I want to pull upon the asymptotic complexity of insertion sort( $O(n^2)$ ) and quick-sort( $O(nlog(n))$ ). Generally Quick-Sort is considered one of the fastest, if not the fastest sorting algorithms. However this fastestness only applies to large lists and if you were working on smaller lists you would want to actually want to use insertion sort because its actually more effiective. This is mostly because insertion sort is more memory efficient and doesn't require any complex procedures. Whereas quicksort is a little more complex and while implace does take up more memory due to recursion. When comparing small or sorted lists like this we have that quicksort has $O(n^2)$ and insertion sort has $O(n)$.
+In this last example I want to pull upon the asymptotic complexity of insertion sort($O(n^2)$) and quick-sort($O(nlog(n))$). Generally Quick-Sort is considered one of the fastest, if not the fastest sorting algorithms. However this fastestness only applies to large lists and if you were working on smaller lists you would want to actually want to use insertion sort because its actually more effiective. This is mostly because insertion sort is more memory efficient and doesn't require any complex procedures. Whereas quicksort is a little more complex and while implace does take up more memory due to recursion. When comparing small or sorted lists like this we have that quicksort has $O(n^2)$ and insertion sort has $O(n)$.
 
 Now we if we were just to look at the general asymptotic complexity as in the begginning of the statement we wouldn't have accounted for this at all. Thus you must look at not only time complexity but also how it changes based on the task you are using it for.
 
@@ -58,19 +67,27 @@ Therefore we can see that the average time complexity is misleading for consider
   of search in a binary search tree, how long would you guess finding the same
   element in a search tree with 10,000 elements takes? Explain your reasoning.*
 
-Search for Binary tree: $Log(n)$
+The time compliexity for search of a Binary tree is: $O(Log(n))$
 
-For this operation to take 5 seconds we must have $T(n)=nLog(1000)=5$. Solving for this we have:
+Thus by definition for a given $T(n)\in O(log(n))$, we have that $\exists$ $n_0,c$ such that $T(n)\leq c\cdot log(n)$ $\forall$ $n\geq n_o$. Where c and $n_o$ are positive constants.
 
-$n=\frac{5}{log_2(1000)}=0.5017166$
+Then if we choose our c carefully we can scale it such that it equals 5 seconds and this will allow us to figure out the case for $n=10,000$.
 
-Checking this we have:
+Given our initial input size $n=1000$ we have:
 
- $0.5017166log_2(1000)=5$
+$C\cdot log_2(1000)=5$
 
-Then we have for that 10,000 inputs takes
+$=C=\frac{5}{log_2(1000)}$=0.5017
 
- $T(n)=0.5017166log_2(10000)=\frac{20}{3}=6.666$ seconds
+Checking this let $C=0.5017$
+
+$0.5017\cdot log_2(1000)=5$ seconds.
+
+Now we can plug this in for $n=10,000$:
+
+Choose  $C=0.5017$
+
+$0.5017 \cdot log_2(10000)=6.66$ seconds.
 
 
 ## Question 3
