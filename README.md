@@ -14,15 +14,6 @@
 
 Add your answers to this markdown file.
 
-All exercises must contain the following statement:
-“I certify that I have listed all sources used to complete this exercise, including the use
-of any Large Language Models. All of the work is my own, except where stated
-otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is
-suspected, charges may be filed against me without prior notice.”-Andrew Thomas
-
-
-
-
 ### Question 1
 *List 3 reasons why asymptotic analysis may be misleading with respect to actual performance in practice.*
 
@@ -49,15 +40,13 @@ For example:
 
  This is a good example of why the general nature of asymtotic complexity doesn't reaveal much about its practically, especially because algorithms can and need to be very specific for different goals.
 
-Reason 3: A good time complexity doesn't imply a good outcome for every siutation
+Reason 3:  Time complexity can be relative:
 
-Lastly to build upon our second reason, asymptotic complexity can be misleading when applied to certain situations such as sorting short lists.
+The last and final reason time complexity can be misleading really stems from the definition.  so lets state it again,
 
-In this last example I want to pull upon the asymptotic complexity of insertion sort($O(n^2)$) and quick-sort($O(nlog(n))$). Generally Quick-Sort is considered one of the fastest, if not the fastest sorting algorithms. However this fastestness only applies to large lists and if you were working on smaller lists you would want to actually want to use insertion sort because its actually more effiective. This is mostly because insertion sort is more memory efficient and doesn't require any complex procedures. Whereas quicksort is a little more complex and while implace does take up more memory due to recursion. When comparing small or sorted lists like this we have that quicksort has $O(n^2)$ and insertion sort has $O(n)$.
+$T(n)\in O(f(n))$ if if there are positive constants $c$ and $n_0$ such that $T(n) \leq c f(n)$ $\forall$ $n\geq n_o$.
 
-Now we if we were just to look at the general asymptotic complexity as in the begginning of the statement we wouldn't have accounted for this at all. Thus you must look at not only time complexity but also how it changes based on the task you are using it for.
-
-Therefore we can see that the average time complexity is misleading for considering certain tasks and is depednent upon what kind of tasks you need your algorthm to perform.
+Above we can see that we pick two postive constants, one $c$ and one $n_o$.  We have already talked about what c does, its just a scalar value of $f(n)$. However the purpose $n_o$ serves a different purpose. What $n_o$'s condiition instead says is that: We choose some input size $n_o$ and then the condition $T(n) \leq c f(n)$ is true after or exactly at that point, however it can be completely untrue before that point. What this means is that your algorithms time complexity could potentially be something different before it hits $n_o$ value. This can be very misleading and if you don't account for this before you choose to use a certain algorithm it may not yield the results you expect for all input sizes.
 
 
 
@@ -69,7 +58,7 @@ Therefore we can see that the average time complexity is misleading for consider
 
 The time compliexity for search of a Binary tree is: $O(Log(n))$
 
-Thus by definition for a given $T(n)\in O(log(n))$, we have that $\exists$ $n_0,c$ such that $T(n)\leq c\cdot log(n)$ $\forall$ $n\geq n_o$. Where c and $n_o$ are positive constants.
+Thus by definition for a given $T(n)\in O(log(n))$, we have that $\exists $ $n_0,c$ such that $T(n)\leq c\cdot log(n)$ $\forall $ $n\geq n_o$. Where c and $n_o$ are positive constants.
 
 Then if we choose our c carefully we can scale it such that it equals 5 seconds and this will allow us to figure out the case for $n=10,000$.
 
@@ -81,13 +70,13 @@ $=C=\frac{5}{log_2(1000)}$=0.5017
 
 Checking this let $C=0.5017$
 
-$0.5017\cdot log_2(1000)=5$ seconds.
+$0.5017\cdot log(1000)=5$ seconds.
 
 Now we can plug this in for $n=10,000$:
 
 Choose  $C=0.5017$
 
-$0.5017 \cdot log_2(10000)=6.66$ seconds.
+$0.5017 \cdot log(10000)=6.66$ seconds.
 
 
 ## Question 3
